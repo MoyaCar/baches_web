@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+  <htm>
+    <head>
+      <title>Baches</title> 
+      <script>
+        document.requestFullscreen()
+      </script>
+       {# Cargamos la librería #}
+       {% load bootstrap4 %}
+    
+       {# CSS Bootstrap #}
+       {% bootstrap_css %}
+    </head>
+    <body>
+      <button onclick="location.href='{% url 'script' %}'" class='btn btn-primary'>Ejecutar Script</button>
+      <button onclick="location.href='{% url 'restar' %}'">Ejecutar Script</button>
+      <button onclick="location.href='{% url 'filmar' %}'">Filmar</button>
+      <button onclick="location.href='{% url 'option' %}'">Option</button>
+      <div>
+        <h1 onclick="location.href='{% url 'option' %}'">Option</h1>
+      </div>
+      {% if numero %}
+      {{ numero }}
+      {% endif %}
+      <div>
+        <h4>Option_Test:</h4>
+        {% if option_test %}
+        {{ option_test }}
+        {% endif %}
+      </div>
+
+      {% bootstrap_javascript jquery='full' %}
+    </body>
+  </htm>
